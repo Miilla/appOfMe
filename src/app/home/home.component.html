@@ -1,0 +1,29 @@
+
+ 
+    
+    <!-- <div class="container color-light">
+        <div class="col">
+            <p> dodej</p>
+        </div>
+        <div class="col">
+            <p>Lista</p>
+        </div>
+    </div> -->
+
+    <div class="container color-light" [@goals]="goals.length">
+        <div class="col" style="background-color: steelblue;padding:2%; border-radius:10px">
+            <p class="sm">Dodej se stuff do  listy</p>
+            <form>
+                <input type="text" class="txt" name="item" placeholder="wpisz..." [(ngModel)]="goalTxt">
+                <!-- <br><span>{{goalTxt}}</span> -->
+                <input style="margin:2%" type="submit" class="btn" value="{{btnTxt}}" (click)="addItemToArray()">
+            </form>   
+        </div>
+        <div class="col" style="background-color: white; margin:2%; border-radius: 10px; padding:1%">
+            <span>Ile se tego stuffu dodałaś? : {{counter}}</span>
+            
+            <li *ngFor="let goal of goals; let i = index" (click)="removeItem(i)" style="background-color: darkslategray; margin:2%; border-radius: 10px; padding:1%">
+                    {{ goal }}
+            </li>
+        </div>
+    </div>
